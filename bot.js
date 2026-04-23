@@ -48,7 +48,11 @@ client.once('ready', () => {
 
     let i = 0;
     setInterval(() => {
-        client.user.setActivity(activities[i]);
+        // console.log(`\x1b[34m[DEBUG]\x1b[0m Cambiando a estado: ${activities[i].name}`);
+        client.user.setPresence({
+            activities: [activities[i]],
+            status: 'online',
+        });
         i = (i + 1) % activities.length;
     }, 5000); // Cambia cada 5 segundos
 });
