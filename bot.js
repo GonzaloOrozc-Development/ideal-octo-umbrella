@@ -31,8 +31,19 @@ client.once('ready', () => {
     console.log(`\x1b[32m[LOG]\x1b[0m Bot online con GROQ: ${client.user.tag}`);
     
     const activities = [
-        { name: 'Created by GonzalO', type: ActivityType.Custom },
-        { name: 'Servidor de Game Community', type: ActivityType.Watching }
+        { 
+            name: 'Game Community', 
+            type: ActivityType.Playing,
+            details: 'La mejor comunidad de juegos',
+            state: 'Desarrollado por GonzalO',
+            buttons: [
+                { label: 'Ver Creador', url: 'https://discord.com/users/1247158284947951697' }
+            ]
+        },
+        { 
+            name: 'Created by GonzalO', 
+            type: ActivityType.Custom 
+        }
     ];
 
     let i = 0;
